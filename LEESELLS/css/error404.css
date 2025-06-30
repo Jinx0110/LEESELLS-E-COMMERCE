@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    font-style: none;
+    background: linear-gradient(70deg, rgba(162, 87, 199, 1) 50%, rgba(247, 240, 246, 1) 100%);
+    background-repeat: no-repeat;      /* Prevents background image/gradient from repeating */
+    background-attachment: fixed;      /* Optional: keeps background fixed on scroll */
+    background-size: cover;   
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;/* Optional: makes sure background covers the whole viewport */
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solin white;
+    background-color: white;
+
+    width: 550px;
+    height: 400px;
+}
+
+.wrapper img{
+    width: 25rem;
+    height: 58pt;
+    cursor: pointer;
+}

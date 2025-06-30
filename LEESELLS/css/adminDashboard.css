@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: rgb(239, 238, 238);
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.logo img{
+ height: 8vh;
+ width: 17vw;
+ margin: 10px;
+}
+
+.logo{
+    border-bottom: 1px solid grey;
+}
+
+
+.side-menu_container{
+  width: 20vw;
+  background-color: rgb(239, 238, 238);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.side-menu{
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+.side-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 14px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.2s;
+  font-size: 1rem;
+}
+.side-menu a.active{
+    border-radius: 20px;
+    width: 15vw;
+    margin-left: 10%;
+    padding: 10;
+    margin-top: 5%;
+    background: white;
+}
+.side-menu a.active .material-symbols-outlined {
+  color: #6c2eb6;
+}
+
+.side-menu a:hover {
+  color: #6c2eb6;
+}
+
+.wrapper{
+display:flex;
+flex-direction: column;
+gap: 2rem;
+overflow-y: auto;
+width: 100%;
+}
+
+.topNav_Container{
+    display: flex;
+    width: 100%;
+    height: 8vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10%;
+    gap: 1rem;
+}
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  max-width: 250px;
+  box-sizing: border-box;
+}
+
+.search input[type="search"] {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.8rem;
+  width: 100%;
+  padding: 4px 0;
+  color: #333;
+}
+
+.search .material-symbols-outlined {
+  color: #000000; 
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+.mainContainer{
+    display: flex;
+    /*flex: 1;*/
+    flex-direction: row;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 1rem;
+  width: 100%; /* or a fixed width if you prefer */
+  max-width: 600px; /* optional, for layout control */
+  margin: 0;   
+}
+
+
+.stats div {
+  /* border: 2px solid black; */
+  padding: 1rem;
+  height: 18vh;
+  color: #ffffff;
+  display: flex;
+  font-size: 20px;
+  font-weight:500;
+  border-radius: 20px;
+}
+
+.popularProducts{
+    border: 2px solid black;
+    width: 35%;
+    height: 40vh;
+    margin-left: 3%;
+    border-radius: 20px;
+}
+.revenueContainer{
+    background: #6c2eb6;
+}
+.ordersContainer{
+ background: rgb(40, 40, 40);
+}
+.productsContainer{
+ background:rgb(40,40,40);
+}
+.usersContainer{
+    background: rgb(40,40,40);
+}
+.latestOrders{
+  border-radius: 10px;
+  width: 80%;
+  height: auto;
+  background: white;
+  border: 2px solid black;
+  padding: 1%;
+}
+
+.latestOrders{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.latestOrders th{
+  text-align: left;
+}
+
+
+.userModal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.userModal .modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+
+

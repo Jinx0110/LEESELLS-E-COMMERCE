@@ -1,0 +1,58 @@
+/* 
+.input {
+  max-width: 190px;
+  display: none;
+}
+
+.labelFile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 250px;
+  height: 190px;
+  border: 2px dashed #ccc;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  color: #404040;
+  cursor: pointer;
+} */
+
+.productModal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.productModal .modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* From Uiverse.io by escannord */ 
+.input {
+  max-width: 190px;
+  display: none;
+}
+
+.labelFile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 250px;
+  height: 190px;
+  border: 2px dashed #ccc;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  color: #404040;
+  cursor: pointer;
+}

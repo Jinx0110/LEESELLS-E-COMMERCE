@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEESELLS-Users</title>
+
+    <link rel = "stylesheet" href = "css/adminDashboard.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+</head>
+<body>
+    <div class = "side-menu_container">
+        <div class = "logo">
+            <a href = "index.html"><img alt = "Brand-logo" src = "img/e-commerceBrandName.png"></a>
+        </div> 
+        
+        <div class = "side-menu_wrapper">
+            <ul class = "side-menu">
+                <li>
+                <a href = "adminDashboard.html">
+                    <span class="material-symbols-outlined">home</span>
+                    Dashboard
+                </a>
+                </li>
+                <li>
+                <a href = "sales.html">
+                    <span class="material-symbols-outlined">payments</span>
+                    Sales
+                </a>
+                </li>
+                <li>
+                <a href = "products.html">
+                    <span class="material-symbols-outlined">inventory_2</span>
+                    Products
+                </a>
+                </li>
+                <li>
+                <a href = "#" class = "active">
+                    <span class="material-symbols-outlined">group</span>
+                    Users
+                </a>
+                </li>
+                <li>
+                <a href = "categories.html">
+                    <span class="material-symbols-outlined">category</span>
+                    Categories
+                </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class = "wrapper">
+        <div class = "topNav_Container">
+            <div class = "search">
+                <span class="material-symbols-outlined">search</span>
+                <input type ="search" placeholder = "Type here...">
+            </div>
+            <div class = "notifications" style = "cursor:pointer">
+                <span class="material-symbols-outlined">notifications</span>
+            </div>
+            <div class = "signIn" style = "cursor:pointer">
+                <span class="material-symbols-outlined">person</span>
+                <!--DISPLAY ADMINS NAME-->
+                <span id = "userNameDisplay" style = "color: black"></span>
+            </div>
+        </div>
+            <div class="user-management-container" style="padding: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <div>
+                    <label for="roleFilter">Filter by Role:</label>
+                    <select id="roleFilter" onchange="filterUsers()">
+                        <option value="all">All</option>
+                        <option value="customer">Customer</option>
+                        <option value="seller">Seller</option>
+                    </select>
+                </div>
+                <button onclick="openAddNewUserModel()" style="padding: 0.5rem 1rem; border-radius: 5px; background: #6c2eb6; color: white; border: none; cursor: pointer;">Add User</button>
+                </div>
+                <table class="latestOrders" id="usersTable" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>UserID</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <!-- User rows will be inserted here dynamically -->
+                    </tbody> 
+                </table>
+            </div>     
+    </div>
+
+    <div id = "editUserModal" class = "userModal" style = "display:none;">
+        <div class = "modal-content" >
+            <h2>Edit User</h2>
+            <form id = "editUserForm">
+                <input type="hidden" id="editUserId" name="user_id">
+                <label for = "newUsername">Username:</label><br>
+                <input type = "text" id = "newUsername" name = "username">
+                <br><br>
+                <label for = "newEmail">Email:</label><br>
+                <input type = "text" id = "newEmail" name = "email">
+                <br><br>
+                <label for = "newRole">Role:</label><br>
+                <select id = "newRole" name = "role">
+                    <option value = "customer">Customer</option>
+                    <option value = "seller">Seller</option>
+                    <option value = "admin">Admin</option>
+                </select>
+                <br><br>
+                
+                <div class = "editForm-Buttons">
+                    <button type = "submit">Save Changes</button>
+                    <button type = "button" onclick = "closeEditUserModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="addUserModal" class="userModal" style="display:none;">
+    <div class="modal-content">
+        <h2>Add New User</h2>
+        <form id="addUserForm" action="php/createAcc.php" method = "post" onsubmit = "return validateForm()" >
+            <label for="addUsername">Username:</label><br>
+            <input type="text" id="addUsername" name="username" required><br><br>
+
+            <label for="addEmail">Email:</label><br>
+            <input type="email" id="addEmail" name="email" required><br><br>
+
+            <label for="addPassword">Email:</label><br>
+            <input type="password" id="addPassword" name="password" required><br><br>
+
+            <label for="addRole">Role:</label><br>
+            <select id="addRole" name="role" required>
+                <option value="customer">Customer</option>
+                <option value="seller">Seller</option>
+                <option value="admin">Admin</option>
+            </select><br><br>
+
+            <div class="editForm-Buttons">
+                <button type="submit">Add User</button>
+                <button type="button" onclick="closeAddUserModal()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+    <script src = "js/displayUsers.js"></script>
+    <script src = "js/modal.js"></script>
+    <script src = "js/displayUsername.js"></script>
+</body>
+</html>

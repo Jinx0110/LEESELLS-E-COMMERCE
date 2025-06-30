@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEESELLS-Admin</title>
+    <link rel = "stylesheet" href = "css/adminDashboard.css">
+    <link rel="icon" href="img/e-commerceBrandLOGO.png" type="image/gif" sizes="16x16">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+</head>
+<body>
+    <div class = "side-menu_container">
+        <div class = "logo">
+            <img alt = "Brand-logo" src = "img/e-commerceBrandName.png">
+        </div> 
+        
+        <div class = "side-menu_wrapper">
+            <ul class = "side-menu">
+                <li>
+                <a href = "#" class = "active">
+                    <span class="material-symbols-outlined">home</span>
+                    Dashboard
+                </a>
+                </li>
+                <li>
+                <a href = "sales.html">
+                    <span class="material-symbols-outlined">payments</span>
+                    Sales
+                </a>
+                </li>
+                <li>
+                <a href = "products.html">
+                    <span class="material-symbols-outlined">inventory_2</span>
+                    Products
+                </a>
+                </li>
+                <li>
+                <a href = "users.html">
+                    <span class="material-symbols-outlined">group</span>
+                    Users
+                </a>
+                </li>
+                <li>
+                <a href = "categories.html">
+                    <span class="material-symbols-outlined">category</span>
+                    Categories
+                </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+ 
+    <div class = "wrapper">
+     <div class = "topNav_Container">
+            <div class = "search">
+                <span class="material-symbols-outlined">search</span>
+                <input type ="search" placeholder = "Type here...">
+            </div>
+            <div class = "notifications" style = "cursor:pointer">
+                <span class="material-symbols-outlined">notifications</span>
+            </div>
+            <div class = "signIn" style = "cursor:pointer">
+                <span class="material-symbols-outlined">person</span>
+                <!--DISPLAY ADMINS NAME-->
+                <span id = "userNameDisplay" style = "color: black"></span>
+            </div>
+        </div>
+
+       
+        <div class = "mainContainer">
+            <div class = "stats">
+                <div class = "revenueContainer">Total Revenue</div>
+                <div class = "ordersContainer">Total Orders</div>
+                <div class = "productsContainer" id = "productsCount">Total Products 
+                <span id = "productsCount"></span>
+                </div>
+                <div class = "usersContainer" id = "customersCount">Customers</div>
+            </div>
+            <div class = "popularProducts">
+
+            </div>
+        </div>
+        
+        <div class = "latestOrders">
+            <span>Latest Orders</span>
+
+            <table class = "latestOrders" id = "latestOrders">
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Amount</th>
+                    <th>User ID</th>
+                    <th>Vendor Id</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+  
+    <script src = "js/displayUsername.js"></script>
+    <script src = "js/displayStats.js"></script>
+</body>
+</html>
